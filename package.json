@@ -1,0 +1,19 @@
+{
+  "name": "flicks-and-food",
+  "version": "1.0.0",
+  "description": "AS A fan of staying in\r I WANT to be given a movie, restaurant and drink options\r SO THAT I don’t waste time trying to make a decision",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ThomBurt/flicks-and-food.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ThomBurt/flicks-and-food/issues"
+  },
+  "homepage": "https://github.com/ThomBurt/flicks-and-food#readme"
+}
