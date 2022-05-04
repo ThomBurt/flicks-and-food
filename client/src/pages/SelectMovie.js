@@ -6,9 +6,9 @@ import React, { useState, useEffect } from 'react';
 const SelectMovie = () => {
   const [formState, setFormState] = useState({ date: '', genre: '' });
 
-  // const [movieState, setMovieState] = useState([]);
+  const [movieState, setMovieState] = useState({});
 
-  const [state, setState] = useState('');
+  // const [state, setState] = useState('');
 
   // const [savedMovieIds, setSavedMovieIds] = useState(getSavedMovieIds());
 
@@ -57,8 +57,8 @@ const SelectMovie = () => {
         image: selectedMovie.image,
         plot: selectedMovie.plot
       };
-      // setMovieState(movieData);
-      setState('1');
+      setMovieState(movieData);
+      // setState('1');
       // console.log(movieState);
 
       // console.log(movieData);
@@ -90,7 +90,7 @@ const SelectMovie = () => {
   return (
 
     <main>
-        {state===''
+        {!movieState.title
         ?
       <div>
         <h2>Select your movie!</h2>
@@ -149,9 +149,14 @@ const SelectMovie = () => {
           </div>
         </form>
       </div>
+
       : <div>
         <h2>Your movie</h2>
-        <h3>{movieData.title}</h3>
+        <h3>{movieState.title} {movieState.year}</h3>
+        <img src={movieState.image} />
+        <p>
+          {movieState.plot}
+        </p>
       </div>
       }
 
