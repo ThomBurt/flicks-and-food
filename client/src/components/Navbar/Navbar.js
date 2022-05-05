@@ -49,6 +49,12 @@ export const NavBar = () => {
                         Get Started
                     </NavLinks>
                     </NavItem>
+
+                    <NavItem>
+                    <NavLinks to="/history" onClick={closeMobileMenu}>
+                        History
+                    </NavLinks>
+                    </NavItem>
                 
                     <NavItem>
                     <NavLinks to="/login" onClick={closeMobileMenu}>
