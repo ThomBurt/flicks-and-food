@@ -18,12 +18,31 @@ const SelectMovie = () => {
   //   return () => saveMovieIds(savedMovieIds);
   // });
 
+  // var random;
+  // var max = 99
+  // function findRandom() {
+  //   random = Math.floor(Math.random() * max)
+  //   // console.log(random)
+  // };
+  
+  // var arr = [];
+  // while(arr.length < 5){
+  //   var r = Math.floor(Math.random() * 99) + 1;
+  //   if(arr.indexOf(r) === -1) arr.push(r);
+  // }
+  // console.log(arr);
+
   var random;
-  var max = 99
+  const numbers = Array(100).fill().map((_, index) => index);
   function findRandom() {
-    random = Math.floor(Math.random() * max)
-    // console.log(random)
+    numbers.sort(() => Math.random() - 0.5);
+    random = numbers.slice(0,5)
+    console.log(numbers.slice(0, 5));
   };
+
+  // var min = 0 
+  // const randomInteger = (min, max) => Math.floor(Math.random() * (max - min + 1)) + min;
+  // console.log(randomInteger);
 
   const getMovie = async() => {
     const inputDate = formState.date;
@@ -38,8 +57,10 @@ const SelectMovie = () => {
       const data = await fetch(`https://imdb-api.com/API/AdvancedSearch/${process.env.REACT_APP_IMDB_APIKEY}/?title_type=feature&release_date=${inputDate}&genres=${inputGenre}&countries=us&languages=en&count=100`);
 
       const jsonData = await data.json();
-      const selectedMovie = jsonData.results[random];
-      // console.log(jsonData.results[random]);
+      const fiveMovies = [jsonData.results[random[0]], jsonData.results[random[1]], jsonData.results[random[2]], jsonData.results[random[3]], jsonData.results[random[4]]];
+      // console.log(jsonData);
+      
+      // console.log(fiveMovies);
 
       // setMovieState({
       //   movieId: selectedMovie.id,
@@ -50,18 +71,30 @@ const SelectMovie = () => {
       // });
       // console.log(movieState);
 
-      const movieData = {
-        movieId: selectedMovie.id,
-        title: selectedMovie.title,
-        year: selectedMovie.description,
-        image: selectedMovie.image,
-        plot: selectedMovie.plot
-      };
-      setMovieState(movieData);
+      // const movieData = {
+      //   movieId: selectedMovie.id,
+      //   title: selectedMovie.title,
+      //   year: selectedMovie.description,
+      //   image: selectedMovie.image,
+      //   plot: selectedMovie.plot
+      // };
+      // setMovieState(movieData);
+
       // setState('1');
       // console.log(movieState);
 
       // console.log(movieData);
+
+      const movieData = fiveMovies.map((movie) => ({
+        id: fiveMovies.id,
+        title: fiveMovies.title,
+        year: fiveMovies.description,
+        image: fiveMovies.image,
+        plot: fiveMovies.plot
+      }));
+      setMovieState(movieData);
+      // console.log(movieData);
+      console.log(movieState);
 
     } catch (err) {
       console.error(err);
@@ -90,7 +123,7 @@ const SelectMovie = () => {
   return (
 
     <main>
-        {!movieState.title
+        {!movieState[0]
         ?
       <div>
         <h2>Select your movie!</h2>
@@ -151,12 +184,13 @@ const SelectMovie = () => {
       </div>
 
       : <div>
-        <h2>Your movie</h2>
-        <h3>{movieState.title} {movieState.year}</h3>
-        <img src={movieState.image} />
-        <p>
-          {movieState.plot}
-        </p>
+        <h2>Your movie options</h2>
+        {movieState.map((movie) => (
+          <div key={movie.id}>
+            <h3> {movie.title} {movie.year}</h3>
+            <img src={movie.image} />
+          </div>
+        ))}
       </div>
       }
 
