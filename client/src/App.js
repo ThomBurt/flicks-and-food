@@ -1,28 +1,49 @@
 import React from 'react'
-import { BrowserRouter as Router, Routes, Route} from 'react-router-dom'
+import { BrowserRouter as Router, Route, Switch } from 'react-router-dom'
 import './App.css';
 import { NavBar } from './components/Navbar/Navbar';
 import { Home } from './components/Home/Home'
 import { GetStarted } from './components/GetStarted/GetStarted'
 import { History } from './components/History/History';
-import { Login } from './components/Login/Login'
+import Login from './pages/Login/Login';
+import Signup from './pages/Signup';
+import { ApolloProvider, ApolloClient, InMemoryCache, createHttpLink } from '@apollo/client';
+import { setContext } from '@apollo/client/link/context';
 
+const httpLink = createHttpLink({
+  uri: '/graphql',
+});
 
+const authLink = setContext((_, { headers }) => {
+  const token = localStorage.getItem('id_token');
+  return {
+    headers: {
+      ...headers,
+      authorization: token ? `Bearer ${token}` : '',
+    },
+  };
+});
+
+const client = new ApolloClient({
+  link: authLink.concat(httpLink),
+  cache: new InMemoryCache(),
+});
 
 function App() {
   return (
-    <React.Fragment>
+    <ApolloProvider client={client}>
       <Router>
         <NavBar />
-          <Routes>
-            <Route path="/" exact element={<Home />} />
-            <Route path="/home" element={<Home />} />
-            <Route path="/getstarted" element={<GetStarted />} />
-            <Route path="/history" element={<History />} />
-            <Route path="/login" element={<Login />} />
-          </Routes>
+          <Switch>
+            <Route exact path="/" element={<Home />} />
+            <Route exact path="/home" element={<Home />} />
+            <Route exact path="/getstarted" element={<GetStarted />} />
+            <Route exact path="/history" element={<History />} />
+            <Route exact path="/login" component={Login} />
+            <Route exact path="/signup" component={Signup} />
+          </Switch>
       </Router>
-    </React.Fragment>
+    </ApolloProvider>
   );
 }
 
