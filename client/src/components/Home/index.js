@@ -10,7 +10,7 @@ import 'swiper/css/pagination';
 import 'swiper/css/scrollbar';
 import 'swiper/css/autoplay';
 
-export default () => {
+export default Home; () => {
   return (
     <Swiper
       // install Swiper modules
