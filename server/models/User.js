@@ -19,7 +19,13 @@ const userSchema = new Schema(
       type: String,
       required: true,
       minlength: 5
-    }
+    },
+    experiences: [
+      {
+        type: Schema.Types.ObjectId,
+        ref: 'Experience'
+      }
+    ]
   },
   {
     toJSON: {
