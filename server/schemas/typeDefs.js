@@ -8,22 +8,6 @@ const typeDefs = gql`
     experiences: String
   }
 
-  type Movie {
-    movieId: String!
-    year: String
-    image: String
-    image: String
-    title: String
-  }
-
-  input MovieInput {
-    movieId: String!
-    year: String
-    image: String
-    image: String
-    title: String
-  }
-
   type Auth {
     token: ID!
     user: User
@@ -38,7 +22,6 @@ const typeDefs = gql`
   type Mutation {
     login(email: String!, password: String!): Auth
     addUser(username: String!, email: String!, password: String!): Auth
-    saveMovie(movieData: MovieInput): User
   }
 `;
 

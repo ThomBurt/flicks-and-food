@@ -25,10 +25,10 @@ const resolvers = {
         .select('-__v -password')
         .populate('experiences');
     },
-    experiences: async (parent, { username }) => {
-      const params = username ? { username } : {};
-      return Experience.find(params).sort({ createdAt: -1 });
-    }
+    // experiences: async (parent, { username }) => {
+    //   const params = username ? { username } : {};
+    //   return Experience.find(params).sort({ createdAt: -1 });
+    // }
   },
 
   Mutation: {
@@ -54,32 +54,32 @@ const resolvers = {
       const token = signToken(user);
       return { token, user };
     },
-    addExperience: async (parent, args, context) => {
-      if (context.user) {
-        const experience = await Experience.create({ ...args, username: context.user.username });
+    // addExperience: async (parent, args, context) => {
+    //   if (context.user) {
+    //     const experience = await Experience.create({ ...args, username: context.user.username });
 
-        await User.findByIdAndUpdate(
-          { _id: context.user._id },
-          { $push: { experiences: experience._id } },
-          { new: true }
-        );
+    //     await User.findByIdAndUpdate(
+    //       { _id: context.user._id },
+    //       { $push: { experiences: experience._id } },
+    //       { new: true }
+    //     );
 
-        return experience;
-      }
+    //     return experience;
+    //   }
 
-      throw new AuthenticationError('You need to be logged in!');
-    },
-    saveMovie: async (_parent, { movieData }, context) => {
-      if (context.user) {
-          const updatedUser = await User.findByIdAndUpdate(
-              { _id: context.user._id },
-              { $push: { savedMovies: movieData } },
-              { new: true }
-          );
-          return updatedUser;
-      }
-      throw new AuthenticationError('You need to be logged in!');
-  },
+    //   throw new AuthenticationError('You need to be logged in!');
+    // },
+  //   saveMovie: async (_parent, { movieData }, context) => {
+  //     if (context.user) {
+  //         const updatedUser = await User.findByIdAndUpdate(
+  //             { _id: context.user._id },
+  //             { $push: { savedMovies: movieData } },
+  //             { new: true }
+  //         );
+  //         return updatedUser;
+  //     }
+  //     throw new AuthenticationError('You need to be logged in!');
+  // },
   }
 };
 

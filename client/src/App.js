@@ -1,14 +1,14 @@
-import React from 'react'
+import { ApolloProvider, ApolloClient, InMemoryCache, createHttpLink } from '@apollo/client';
+import { setContext } from '@apollo/client/link/context';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom'
+import React from 'react'
 import './App.css';
 import { NavBar } from './components/Navbar/Navbar';
 import { Home } from './components/Home/Home'
 import { GetStarted } from './components/GetStarted/GetStarted'
 import { History } from './components/History/History';
-import Login from './pages/Login/Login';
+import Login from './pages/Login/Login.js';
 import Signup from './pages/Signup';
-import { ApolloProvider, ApolloClient, InMemoryCache, createHttpLink } from '@apollo/client';
-import { setContext } from '@apollo/client/link/context';
 
 const httpLink = createHttpLink({
   uri: '/graphql',
