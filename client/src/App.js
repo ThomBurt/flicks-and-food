@@ -9,6 +9,7 @@ import { GetStarted } from './components/GetStarted/GetStarted'
 import { History } from './components/History/History';
 import Login from './pages/Login/Login.js';
 import Signup from './pages/Signup';
+import SelectMovie from './pages/SelectMovie/SelectMovie.js';
 
 const httpLink = createHttpLink({
   uri: '/graphql',
@@ -41,10 +42,10 @@ function App() {
             <Route exact path="/history" element={<History />} />
             <Route exact path="/login" component={Login} />
             <Route exact path="/signup" component={Signup} />
+            <Route exact path="/movie" component={SelectMovie} />
           </Switch>
       </Router>
     </ApolloProvider>
   );
 }
-
 export default App;
