@@ -3,12 +3,12 @@ import React, { useState, useEffect } from 'react';
 // import { useMutation } from '@apollo/react-hooks';
 // import { SAVE_MOVIE } from '../utils/mutations';
 
+import './SelectMovie.css';
+
 const SelectMovie = () => {
   const [formState, setFormState] = useState({ date: '', genre: '' });
 
   const [movieState, setMovieState] = useState({});
-
-  // const [state, setState] = useState('');
 
   // const [savedMovieIds, setSavedMovieIds] = useState(getSavedMovieIds());
 
@@ -18,31 +18,12 @@ const SelectMovie = () => {
   //   return () => saveMovieIds(savedMovieIds);
   // });
 
-  // var random;
-  // var max = 99
-  // function findRandom() {
-  //   random = Math.floor(Math.random() * max)
-  //   // console.log(random)
-  // };
-  
-  // var arr = [];
-  // while(arr.length < 5){
-  //   var r = Math.floor(Math.random() * 99) + 1;
-  //   if(arr.indexOf(r) === -1) arr.push(r);
-  // }
-  // console.log(arr);
-
   var random;
-  const numbers = Array(100).fill().map((_, index) => index);
+  var max = 99
   function findRandom() {
-    numbers.sort(() => Math.random() - 0.5);
-    random = numbers.slice(0,5)
-    console.log(numbers.slice(0, 5));
+    random = Math.floor(Math.random() * max)
+    console.log(random)
   };
-
-  // var min = 0 
-  // const randomInteger = (min, max) => Math.floor(Math.random() * (max - min + 1)) + min;
-  // console.log(randomInteger);
 
   const getMovie = async() => {
     const inputDate = formState.date;
@@ -57,58 +38,27 @@ const SelectMovie = () => {
       const response = await fetch(`https://imdb-api.com/API/AdvancedSearch/${process.env.REACT_APP_IMDB_APIKEY}/?title_type=feature&release_date=${inputDate}&genres=${inputGenre}&countries=us&languages=en&count=100`);
 
       const jsonData = await response.json();
-      // const fiveMovies = [jsonData.results[random[0]], jsonData.results[random[1]], jsonData.results[random[2]], jsonData.results[random[3]], jsonData.results[random[4]]];
-      console.log(jsonData.results);
-      const results = jsonData.results
-      // console.log(fiveMovies);
-
-      // setMovieState({
-      //   movieId: selectedMovie.id,
-      //   title: selectedMovie.title,
-      //   year: selectedMovie.description,
-      //   image: selectedMovie.image,
-      //   plot: selectedMovie.plot
-      // });
-      // console.log(movieState);
-
-      // const movieData = {
-      //   movieId: selectedMovie.id,
-      //   title: selectedMovie.title,
-      //   year: selectedMovie.description,
-      //   image: selectedMovie.image,
-      //   plot: selectedMovie.plot
-      // };
-      // setMovieState(movieData);
+      const selectedMovie = jsonData.results[random]
 
       if (!response.ok) {
         throw new Error('something went wrong!');
       }
-
-      // const { items } = await response.json();
-
-      const movieData = results.map((movie) => ({
-        movieId: movie.id,
-        title: movie.title,
-        year: movie.description,
-        image: movie.image,
-        plot: movie.plot
-      }));
-    //   const movieData = fiveMovies.map((movie) => ({
-    //     id: movie.id,
-    //     title: movie.title,
-    //     year: movie.description,
-    //     image: movie.image,
-    //     plot: movie.plot
-    // }));
-      setMovieState(movieData);
+      
+      const movieData = {
+        movieId: selectedMovie.id,
+        title: selectedMovie.title,
+        year: selectedMovie.description,
+        image: selectedMovie.image,
+        plot: selectedMovie.plot
+      };
       console.log(movieData);
+      setMovieState(movieData);
       console.log(movieState);
 
     } catch (err) {
       console.error(err);
     }
   };
-
 
   const handleFormSubmit = async (event) => {
     event.preventDefault();
@@ -128,24 +78,19 @@ const SelectMovie = () => {
     console.log(formState);
   };
 
-  // const movieContent = movieState.map((movie) =>
-  //   <div key={movie.id}>
-  //     <h3> {movie.title} {movie.year}</h3>
-  //     <img src={movie.image} />
-  //   </div>
-  // );
-
   return (
 
-    <main>
-        {!movieState[0]
+    <main className='flex-row justify-center mb-4 mt-3'>
+        {!movieState.title
         ?
-      <div>
-        <h2>Select your movie!</h2>
+      <div className="card">
+        <h2 className="card-header">Select your movie!</h2>
+        <div className="card-body">
         <form onSubmit={handleFormSubmit}>
           <div className="flex-row space-between my-2">
-            <label htmlFor="genre">Genres:</label>
+            <label className="form-label" htmlFor="genre">Genre:</label>
             <select
+              className="form-input"
               name="genre"
               id="genre"
               onChange={handleChange}
@@ -177,8 +122,9 @@ const SelectMovie = () => {
             </select>
           </div>
           <div className="flex-row space-between my-2">
-            <label htmlFor="date">Year Range:</label>
+            <label className="form-label" htmlFor="date">Year Range:</label>
             <select
+              className="form-input"
               name="date"
               id="date"
               onChange={handleChange}
@@ -192,13 +138,26 @@ const SelectMovie = () => {
             </select>
           </div>
           <div className="flex-row flex-end">
-            <button type="submit">Submit</button>
+            <button className='btn d-block w-100' type="submit">Submit</button>
           </div>
         </form>
+        </div>
       </div>
 
-      : <div>
-        <h2>Your movie options</h2>
+      : <div className='flex-row justify-center mb-4'>
+        <h2>TONIGHT YOU'RE WATCHING</h2>
+        <div className="movie-card">
+          <h3 className="movie-card-header">{movieState.title} {movieState.year}</h3>
+          <div className="movie-card-body">
+            <img className="movie-img" src={movieState.image} />
+            <p>{movieState.plot}</p>
+          </div>
+        </div>
+        <div className='link-btn mt-3'>
+          <a href='/' className='btn d-block w-100'>
+            Now pick dinner!
+          </a>
+        </div>
       </div>
       }
 
@@ -206,28 +165,3 @@ const SelectMovie = () => {
   );
 }
 export default SelectMovie;
-
-
-
-
-// const SelectMovie = (movieState) => {
-
-
-
-//   return (
-
-//     <main>
-//       <div>
-//         <MovieForm />   
-//         <div>
-          
-//           <h2>Your Movie is:</h2>
-//           <h3>{movieState.title}</h3>
-//         </div>
-//       </div>
-//     </main>
-//   );
-
-// }
-
-// export default SelectMovie;
