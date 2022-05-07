@@ -4,7 +4,7 @@ import { Container } from '../../golbalStyles'
 
 
 export const Nav = styled.nav`
-background: #3D9AFF;
+background: #3872b3;
 height: 80px;
 display: flex;
 justify-content: center;
@@ -42,8 +42,7 @@ width: 70px;
 
 export const Icon = styled.img`
 margin-right: 0.5rem;
-height: 60px;
-width: 250px;
+width: 280px;
 `;
 
 export const MobileIcon = styled.div`

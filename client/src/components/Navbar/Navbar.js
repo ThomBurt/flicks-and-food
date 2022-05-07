@@ -5,7 +5,7 @@ import {
     Nav,
     NavContainer,
     NavLogo,
-    Image,
+  //  Image,
     Icon,
     MobileIcon,
     NavMenu,
@@ -13,7 +13,7 @@ import {
     NavLinks
 } from './Navbar.elements'
 
-const logo = require('../Assets/img/icon-BLACK.png')
+//const logo = require('../Assets/img/icon-BLACK.png')
 const title = require('../Assets/img/text-WHITE.png')
 
 export const NavBar = () => {
@@ -30,7 +30,7 @@ export const NavBar = () => {
             <Nav>
                 <NavContainer>
                     <NavLogo to="/" onClick={closeMobileMenu}>
-                        <Image src={logo} />
+                        {/* <Image src={logo} /> */}
                         <Icon src={title} />
                     </NavLogo>
                     <MobileIcon onClick={handleClick}>
@@ -45,7 +45,7 @@ export const NavBar = () => {
                     </NavItem>
 
                     <NavItem>
-                    <NavLinks to="/getstarted" onClick={closeMobileMenu}>
+                    <NavLinks to="/movie" onClick={closeMobileMenu}>
                         Get Started
                     </NavLinks>
                     </NavItem>

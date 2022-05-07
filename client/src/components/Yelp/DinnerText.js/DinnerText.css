@@ -1,0 +1,11 @@
+.underline {
+    text-decoration: underline wavy #0673ef;
+}
+
+.text {
+    color:#3872b3;
+    font-size: 30px;
+    display: flex;
+    justify-content: center;
+    margin-bottom: 3rem;
+}
