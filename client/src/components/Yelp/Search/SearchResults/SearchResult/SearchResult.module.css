@@ -1,0 +1,44 @@
+.search-result {
+  display: flex;
+  max-width: 1135px;
+  width: 100%;
+  padding: 20px;
+  border-bottom: solid white 1px;
+}
+
+.business-image {
+  width: 210px;
+  height: 210px;
+  border-radius: 4px;
+  margin-right: 1rem;
+}
+
+.business-info {
+  min-width: 400px;
+}
+
+.contact-info p {
+  font-size: 0.85rem;
+}
+
+:global(.tag).business-tag {
+  margin-right: 4px;
+}
+
+.choose-button {
+  margin-top: 15px;
+  margin-right: 15px;
+  margin-bottom: 15px;
+  background-color: #3872b3;
+  padding: 10px;
+  color: white;
+  cursor: pointer;
+  border: none;
+  border-radius: 10px;
+  transition: ease-in-out 0.2s;
+  box-shadow: rgba(0, 0, 0, 0.16) 0px 10px 36px 0px, rgba(0, 0, 0, 0.06) 0px 0px 0px 1px;
+}
+.choose-button:hover {
+  background-color: #255185;
+  transform: scale(1.1);
+}
