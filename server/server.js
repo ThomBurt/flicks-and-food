@@ -1,13 +1,13 @@
 const express = require('express');
 const routes = require('./controllers');
 // import ApolloServer
-//const { ApolloServer } = require('apollo-server-express');
+const { ApolloServer } = require('apollo-server-express');
 const path = require('path');
 
 // import our typeDefs and resolvers
-// const { typeDefs, resolvers } = require('./schemas');
-// const { authMiddleware } = require('./utils/auth');
-// const db = require('./config/connection');
+const { typeDefs, resolvers } = require('./schemas');
+const { authMiddleware } = require('./utils/auth');
+const db = require('./config/connection');
 
 
 // cors
@@ -16,6 +16,21 @@ var cors = require('cors');
 
 const PORT = process.env.PORT || 3001;
 const app = express();
+
+const startServer = async () => {
+  const server = new ApolloServer({
+    typeDefs,
+    resolvers,
+    context: authMiddleware,
+  });
+  await server.start();
+  server.applyMiddleware({ app });
+  console.log(`Use GraphQL at http://localhost:${PORT}${server.graphqlPath}`);
+};
+
+startServer();
+
+
 
 // Cors
 app.use(cors());
