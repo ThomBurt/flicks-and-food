@@ -74,7 +74,7 @@ export const Login = (props) => {
                 </a>
               </div>
             </form>
-            {error && <div>Login failed</div>}
+            {error && <div className='card-text'>Login failed</div>}
           </div>
         </div>
       </div>
