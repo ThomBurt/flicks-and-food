@@ -3,8 +3,11 @@ import icon from '../../Assets/img/app-icon.png';
 import './LogoHome.css';
 import { Icon } from 'semantic-ui-react';
 
+import Auth from '../../../utils/auth';
+
 export function LogoHome() {
-    
+    const loggedIn = Auth.loggedIn();
+
     return(
         <div className=''>
             <div className='logo-div'>
@@ -35,9 +38,15 @@ export function LogoHome() {
                     </div>
                 </div>
             </div>
+            {loggedIn ? (
+                <div className='get-started-button-div'>
+                    <button onClick={event =>  window.location.href='/movie'} className='button-28'>Get Started <Icon name="hand pointer" /></button>
+                </div>
+            ) :
             <div className='get-started-button-div'>
-                <button onClick={event =>  window.location.href='/movie'} className='button-28'>Get Started <Icon name="hand pointer" /></button>
-            </div>
+            <button onClick={event =>  window.location.href='/login'} className='button-28'>Login to Get Started<Icon name="hand pointer" /></button>
+            </div> }
+
         </div>
     );
 }

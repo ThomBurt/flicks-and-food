@@ -84,7 +84,7 @@ height: 80px;
 border-bottom: 2px solid transparent;
 
 &:hover {
-    border-bottom: 2px solid #4b59f7;
+    border-bottom: 4px solid #FFFFFF;
 }
 
 @media screen and (max-width: 960px) {
@@ -97,12 +97,16 @@ border-bottom: 2px solid transparent;
 `;
 
 export const NavLinks = styled(Link)`
-color: #fff;
+color: #B8E0FF;
 display: flex;
 align-items: center;
 text-decoration: none;
 padding: 0.5rem 1rem;
 height: 100%;
+
+&:hover {
+    color: #FFFFFF;
+}
 
 @media screen and (max-width: 960px) {
     text-align: center;

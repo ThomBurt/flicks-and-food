@@ -13,6 +13,8 @@ import {
     NavLinks
 } from './Navbar.elements';
 
+import Auth from "../../utils/auth";
+
 //const logo = require('../Assets/img/icon-BLACK.png')
 const title = require('../Assets/img/text-WHITE.png')
 
@@ -23,6 +25,57 @@ export const NavBar = () => {
 
     const handleClick = () => setClick(!click);
     const closeMobileMenu = () => setClick(false);
+
+    const showLoginOut = () => {
+        if (Auth.loggedIn()) {
+            return (
+                <NavMenu onClick={handleClick} click={click}>
+
+                <NavItem>
+                <NavLinks to="/home" onClick={event =>  window.location.href='/'}>
+                    Home
+                </NavLinks>
+                </NavItem>
+
+                <NavItem>
+                <NavLinks to="/movie" onClick={event =>  window.location.href='/movie'}>
+                    Get Started
+                </NavLinks>
+                </NavItem>
+
+                <NavItem>
+                <NavLinks to="/history" onClick={event => window.location.href='/history'}>
+                    History
+                </NavLinks>
+                </NavItem>
+            
+                <NavItem>
+                <NavLinks to="/" onClick={() => Auth.logout()}>
+                    Logout
+                </NavLinks>
+                </NavItem>
+            </NavMenu>
+
+            );
+        } else {
+            return (
+            <NavMenu onClick={handleClick} click={click}>
+
+                <NavItem>
+                <NavLinks to="/home" onClick={event =>  window.location.href='/'}>
+                    Home
+                </NavLinks>
+                </NavItem>
+            
+                <NavItem>
+                <NavLinks to="/login" onClick={event => window.location.href='/login'}>
+                    Login/Signup
+                </NavLinks>
+                </NavItem>
+            </NavMenu>
+            );
+        }
+    }
 
     return (
     <>
@@ -36,7 +89,8 @@ export const NavBar = () => {
                     <MobileIcon onClick={handleClick}>
                     {click ? <FaTimes /> : <FaBars />}
                     </MobileIcon>
-                    <NavMenu onClick={handleClick} click={click}>
+                    {showLoginOut()}
+                    {/* <NavMenu onClick={handleClick} click={click}>
 
                     <NavItem>
                     <NavLinks to="/home" onClick={event =>  window.location.href='/'}>
@@ -51,17 +105,17 @@ export const NavBar = () => {
                     </NavItem>
 
                     <NavItem>
-                    <NavLinks to="/history" onClick={closeMobileMenu}>
+                    <NavLinks to="/history" onClick={event => window.location.href='/history'}>
                         History
                     </NavLinks>
                     </NavItem>
                 
                     <NavItem>
-                    <NavLinks to="/login" onClick={closeMobileMenu}>
+                    <NavLinks to="/login" onClick={event => window.location.href='/login'}>
                         Login/Signup
                     </NavLinks>
                     </NavItem>
-                </NavMenu>
+                </NavMenu> */}
                 </NavContainer>
             </Nav>
         </IconContext.Provider>

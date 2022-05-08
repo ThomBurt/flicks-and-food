@@ -1,5 +1,7 @@
 import React, { useState } from 'react';
-// import Auth from '../utils/auth';
+import Auth from '../../utils/auth';
+import { Redirect } from 'react-router-dom';
+
 // import { useMutation } from '@apollo/react-hooks';
 // import { SAVE_MOVIE } from '../utils/mutations';
 //import { Spinner } from '../../components/Yelp/Spinner/Spinner';
@@ -17,6 +19,11 @@ const SelectMovie = () => {
   // useEffect(() => {
   //   return () => saveMovieIds(savedMovieIds);
   // });
+
+  // If not logged in, redirect to login page
+  if (!Auth.loggedIn()) {
+    return <Redirect to="/login" />
+  }
 
   var random;
   var max = 99
