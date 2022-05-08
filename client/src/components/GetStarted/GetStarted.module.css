@@ -1,0 +1,14 @@
+* {
+    font-family: 'Ubuntu', sans-serif;
+}
+
+.search-area {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.landing {
+    display: flex;
+    justify-content: center;
+}
