@@ -51,13 +51,13 @@ export const NavBar = () => {
                     </NavItem>
 
                     <NavItem>
-                    <NavLinks to="/history" onClick={closeMobileMenu}>
+                    <NavLinks to="/history" onClick={event => window.location.href='/history'}>
                         History
                     </NavLinks>
                     </NavItem>
                 
                     <NavItem>
-                    <NavLinks to="/login" onClick={closeMobileMenu}>
+                    <NavLinks to="/login" onClick={event => window.location.href='/login'}>
                         Login/Signup
                     </NavLinks>
                     </NavItem>
