@@ -29,7 +29,7 @@ export const NavBar = () => {
         <IconContext.Provider value={{ color: '#fff' }}>
             <Nav>
                 <NavContainer>
-                    <NavLogo to="/" onClick={closeMobileMenu}>
+                    <NavLogo to="/" nClick={event =>  window.location.href='/home'}>
                         {/* <Image src={logo} /> */}
                         <Icon src={title} />
                     </NavLogo>
