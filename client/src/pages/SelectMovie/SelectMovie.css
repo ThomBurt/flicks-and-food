@@ -98,6 +98,7 @@ p {
   outline: none;
   background-color: var(--tertiary);
   transition: all 0.5s;
+  cursor: pointer;
 }
 
 .link-btn {

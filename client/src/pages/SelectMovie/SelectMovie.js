@@ -1,8 +1,8 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 // import Auth from '../utils/auth';
 // import { useMutation } from '@apollo/react-hooks';
 // import { SAVE_MOVIE } from '../utils/mutations';
-
+//import { Spinner } from '../../components/Yelp/Spinner/Spinner';
 import './SelectMovie.css';
 
 const SelectMovie = () => {
@@ -39,6 +39,7 @@ const SelectMovie = () => {
 
       const jsonData = await response.json();
       const selectedMovie = jsonData.results[random]
+
 
       if (!response.ok) {
         throw new Error('something went wrong!');
@@ -149,12 +150,12 @@ const SelectMovie = () => {
         <div className="movie-card">
           <h3 className="movie-card-header">{movieState.title} {movieState.year}</h3>
           <div className="movie-card-body">
-            <img className="movie-img" src={movieState.image} />
+            <img className="movie-img" src={movieState.image} alt="movie"/>
             <p>{movieState.plot}</p>
           </div>
         </div>
         <div className='link-btn mt-3'>
-          <a href='/' className='btn d-block w-100'>
+          <a href='/dinner' className='btn d-block w-100'>
             Now pick dinner!
           </a>
         </div>

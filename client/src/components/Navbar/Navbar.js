@@ -11,7 +11,7 @@ import {
     NavMenu,
     NavItem,
     NavLinks
-} from './Navbar.elements'
+} from './Navbar.elements';
 
 //const logo = require('../Assets/img/icon-BLACK.png')
 const title = require('../Assets/img/text-WHITE.png')
@@ -39,25 +39,25 @@ export const NavBar = () => {
                     <NavMenu onClick={handleClick} click={click}>
 
                     <NavItem>
-                    <NavLinks to="/home" onClick={closeMobileMenu}>
+                    <NavLinks to="/home" onClick={event =>  window.location.href='/'}>
                         Home
                     </NavLinks>
                     </NavItem>
 
                     <NavItem>
-                    <NavLinks to="/movie" onClick={closeMobileMenu}>
+                    <NavLinks to="/movie" onClick={event =>  window.location.href='/movie'}>
                         Get Started
                     </NavLinks>
                     </NavItem>
 
                     <NavItem>
-                    <NavLinks to="/history" onClick={closeMobileMenu}>
+                    <NavLinks to="/history" onClick={event => window.location.href='/history'}>
                         History
                     </NavLinks>
                     </NavItem>
                 
                     <NavItem>
-                    <NavLinks to="/login" onClick={closeMobileMenu}>
+                    <NavLinks to="/login" onClick={event => window.location.href='/login'}>
                         Login/Signup
                     </NavLinks>
                     </NavItem>
