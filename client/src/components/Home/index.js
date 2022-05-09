@@ -20,16 +20,16 @@ export default Home; () => {
       onSlideChange={() => console.log('slide change')}
     >
       <SwiperSlide>
-        <img className="img" src="client/public/images" alt="" />
+        <img className="img" src="client/public/images/movie-slide.jpeg" alt="" />
       </SwiperSlide>
       <SwiperSlide>
-        <img className="img" src="client/public/images" alt="" />
+        <img className="img" src="client/public/images/food-slide.jpg" alt="" />
       </SwiperSlide>
       <SwiperSlide>
-        <img className="img" src="client/public/images" alt="" />
+        <img className="img" src="client/public/images/drink-slide.jpg" alt="" />
       </SwiperSlide>
       <SwiperSlide>
-        <img className="img" src="client/public/images" alt="" />
+        <img className="img" src="client/public/images/final-slide.jpg" alt="" />
       </SwiperSlide>
     </Swiper>
   );
