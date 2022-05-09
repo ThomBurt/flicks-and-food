@@ -21,14 +21,18 @@ export default Home; () => {
     >
       <SwiperSlide>
         <img className="img" src="client/public/images/movie-slide.jpeg" alt="" />
+        <h3>Choose the perfect movie</h3>
       </SwiperSlide>
       <SwiperSlide>
+        <h3>Pair it with some food</h3>
         <img className="img" src="client/public/images/food-slide.jpg" alt="" />
       </SwiperSlide>
       <SwiperSlide>
         <img className="img" src="client/public/images/drink-slide.jpg" alt="" />
+        <h3>Top it off with a drink</h3>
       </SwiperSlide>
       <SwiperSlide>
+        <h2>Get Started!</h2>
         <img className="img" src="client/public/images/final-slide.jpg" alt="" />
       </SwiperSlide>
     </Swiper>
