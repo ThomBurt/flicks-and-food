@@ -32,7 +32,7 @@ const SelectMovie = () => {
     console.log(random)
   };
 
-  const getMovie = async() => {
+  const getMovie = async(props) => {
     const inputDate = formState.date;
     const inputGenre = formState.genre;
 
@@ -62,6 +62,10 @@ const SelectMovie = () => {
       console.log(movieData);
       setMovieState(movieData);
       console.log(movieState);
+
+
+      localStorage.setItem('movieInfo', JSON.stringify(movieData.title));
+
 
     } catch (err) {
       console.error(err);

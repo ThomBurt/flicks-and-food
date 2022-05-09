@@ -11,6 +11,7 @@ import { Login } from './pages/Login/Login';
 import Signup from './pages/Signup';
 import SelectMovie from './pages/SelectMovie/SelectMovie.js';
 import {Search} from './components/Yelp/Search/Search';
+import SelectDrink from './pages/SelectDrink/SelectDrink';
 
 
 const httpLink = createHttpLink({
@@ -46,6 +47,7 @@ function App() {
             <Route exact path="/login" component={Login}/>
             <Route exact path="/signup" component={Signup} />
             <Route exact path="/movie" component={SelectMovie} />
+            <Route exact path="/drink" component={SelectDrink} />
           </Switch>
       </Router>
     </ApolloProvider>

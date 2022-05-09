@@ -4,10 +4,9 @@ import { Icon } from 'semantic-ui-react';
 import { Modal } from './Modal';
 import styles from './SearchResult.module.css';
 
-
-
 export function SearchResult(props) {
   const [isOpen, setIsOpen] = useState(false);
+
 
   const b = props.business;
   if (!b) {
@@ -16,7 +15,7 @@ export function SearchResult(props) {
   //console.log(b);
   const rating = b.rating;
   const name = b.name;
-  // const yelpBusinessURL = b.url;
+  //const yelpBusinessURL = b.url;
   // const phone = b.phone;
   // const pickup = b.transactions[0];
   // const delivery = b.transactions[1];
@@ -42,7 +41,18 @@ export function SearchResult(props) {
   // }
 
   function onSubmit(e) {
-    console.log(name)
+    // let restaurantInfo = {
+    //   name: name, 
+    //   address: addressLines,
+    //   url: yelpBusinessURL,
+    //   phone: phone,
+    //   pickup: pickup,
+    //   delivery: delivery
+    // }
+   console.log(name) 
+  //  console.log (b)
+   localStorage.setItem('restaurantInfo', JSON.stringify(name));
+   window.location.href='/drink';
   }
 
   return (
