@@ -160,6 +160,11 @@ nav a:hover {
   font-size: 1.4rem;
 }
 
+.card-text {
+  color: white;
+  margin-top: 10px;
+}
+
 /* FORM */
 .form-label,
 .form-input,

@@ -8,7 +8,7 @@ import { NavBar } from './components/Navbar/Navbar';
 import { Home } from './components/Home/Home'
 import  GetStarted from './components/GetStarted/GetStarted'
 import { History } from './components/History/History';
-import Login from './pages/Login/Login.js';
+import { Login } from './pages/Login/Login';
 import Signup from './pages/Signup';
 import SelectMovie from './pages/SelectMovie/SelectMovie.js';
 import {Search} from './components/Yelp/Search/Search';
@@ -43,8 +43,8 @@ function App() {
             <Route exact path="/home" component={Home} />
             <Route exact path="/dinner" component={GetStarted} />
             <Route path='/search' component={Search}/>
-            <Route exact path="/history" element={<History />} />
-            <Route exact path="/login" component={Login} />
+            <Route exact path="/history" component={History} />
+            <Route exact path="/login" component={Login}/>
             <Route exact path="/signup" component={Signup} />
             <Route exact path="/movie" component={SelectMovie} />
           </Switch>

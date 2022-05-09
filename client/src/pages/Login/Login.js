@@ -4,7 +4,7 @@ import { LOGIN_USER } from '../../utils/mutations';
 import Auth from '../../utils/auth';
 import './Login.css';
 
-const Login = (props) => {
+export const Login = (props) => {
   const [formState, setFormState] = useState({ email: '', password: '' });
 
   const [login, { error }] = useMutation(LOGIN_USER);
@@ -74,7 +74,7 @@ const Login = (props) => {
                 </a>
               </div>
             </form>
-            {error && <div>Login failed</div>}
+            {error && <div className='card-text'>Login failed</div>}
           </div>
         </div>
       </div>
