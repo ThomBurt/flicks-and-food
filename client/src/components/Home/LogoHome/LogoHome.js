@@ -32,7 +32,7 @@ export function LogoHome() {
                     </div>
                     <div className='centering'>
                         <span className='icon-centering'>
-                            <Icon name="coffee" />
+                            <Icon name="glass martini" />
                         </span>
                         <h5>Top if off with a drink</h5>
                     </div>

@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import styles from './GetStarted.module.css';
 import { SearchBar } from '../Yelp/SearchBar/SearchBar';
 import { Logo } from '../Yelp/Logo/Logo';
@@ -8,6 +8,10 @@ import useReactRouter from 'use-react-router';
 
 const GetStarted = () => {
   const { history } = useReactRouter();
+
+
+  useState(search);
+
 
   function search(term, location) {
     const urlEncodedTerm = encodeURI(term);
