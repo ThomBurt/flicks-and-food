@@ -1,7 +1,7 @@
-  {
+{
     "name": "flicks-and-food",
     "version": "1.0.0",
-    "description": "AS A fan of staying in I WANT to be given a movie, restaurant and drink options SO THAT I do not waste time trying to make a decision",
+    "description": "AS A fan of staying in I WANT to be given a movie, restaurant and drink options SO THAT I don’t waste time trying to make a decision",
     "main": "server/server.js",
     "scripts": {
       "start": "node server/server.js",
