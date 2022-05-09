@@ -1,5 +1,5 @@
 const { AuthenticationError } = require('apollo-server-express');
-const { User, Experience } = require('../models');
+const { User, Experience, Restaurant, DrinkCategories, Drink } = require('../models');
 const { signToken } = require('../utils/auth');
 
 const resolvers = {
@@ -29,6 +29,9 @@ const resolvers = {
     //   const params = username ? { username } : {};
     //   return Experience.find(params).sort({ createdAt: -1 });
     // }
+    drink: async () => {
+      return Drink.find();
+    }
   },
 
   Mutation: {
@@ -54,6 +57,8 @@ const resolvers = {
       const token = signToken(user);
       return { token, user };
     },
+
+
     // addExperience: async (parent, args, context) => {
     //   if (context.user) {
     //     const experience = await Experience.create({ ...args, username: context.user.username });
