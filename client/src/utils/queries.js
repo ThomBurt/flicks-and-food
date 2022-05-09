@@ -9,3 +9,15 @@ export const GET_ME = gql`
     }
   }
 `;
+
+// Trying to get the experience working
+export const QUERY_EXPERIENCE = gql`
+query experiences($username: String) {
+  experiences(username: $username) {
+    movie
+    meal
+    createdAt
+    username
+  }
+}
+`;
