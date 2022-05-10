@@ -22,6 +22,7 @@ export function SearchBar(props) {
             <div className="field has-addons">
                 <div className='input-field-search'>
                     <div className="control">
+                        <div>Dinner time!</div>
                     <Form.Group className="mb-3">
                             {/* <Form.Label className="margin-right cuisine-txt" >Choose a cuisine!</Form.Label> */}
                             <Form.Select 
@@ -45,6 +46,7 @@ export function SearchBar(props) {
                             </Form.Group>
                     </div>
                     <div className="control">
+                        <div className='margin-left'>Choose your location!</div>
                         <input className={`input ${styles['input-control']}`}
                             onChange={(e) => setLocation(e.target.value)}
                             type="text"
