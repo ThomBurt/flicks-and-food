@@ -5,6 +5,8 @@ import {
     HistoryList
 } from './History.elements'
 
+import './history.css';
+
 export const History = () => {
 
     const [img, setImg] = useState();
@@ -28,12 +30,43 @@ export const History = () => {
             <HistoryWrapper>
                 <HistoryContainerForm>
                     <HistoryList>
-                        <h4>Your Experience</h4>
+                        <h4 className='title'><u>Here it is! Your night is all sorted!</u></h4>
                         <div> 
-                            <div>{localStorage.getItem(`movieInfo`)}</div>
-                            <div>{localStorage.getItem(`restaurantInfo`)}</div>
-                            <div>{localStorage.getItem(`drinkInfo`)}</div>
-                            <div><img src={img} alt="drink" /></div>              
+                            <div className='selection-div'>
+                                <div>
+                                Your movie choice:
+                                </div>
+                                <div>
+                                    <h4>
+                                        {localStorage.getItem(`movieInfo`)}
+                                    </h4>
+                                </div>
+                            </div>
+
+                            <div className='selection-div'>
+                                <div>
+                                    Your dinner for this evening is:
+                                </div>
+                                <h4>
+                                    {localStorage.getItem(`restaurantInfo`)}
+                                </h4>
+                            </div>
+
+                            <div className='selection-div'>
+                                <div> 
+                                    Check out your drink:
+                                </div>
+                                <div>
+                                     <h4>
+                                         {localStorage.getItem(`drinkInfo`)}
+                                     </h4>
+                                     <div>
+                                         <img src={img} alt="drink" />
+                                     </div> 
+                                </div>
+                            </div>
+
+                     
                         </div>
                     </HistoryList>
                 </HistoryContainerForm>
