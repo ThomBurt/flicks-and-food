@@ -28,6 +28,7 @@ const SelectDrink = () => {
       console.log(drinkState.name);
 
       localStorage.setItem('drinkInfo', JSON.stringify(drinkData.name));
+      localStorage.setItem('drinkInfoImg', JSON.stringify(drinkData.image));
 
    
     }
@@ -39,7 +40,7 @@ const SelectDrink = () => {
     return(
         <main>
             <div className='cocktail-button-div'>
-                <button className='btn d-block w-50' onClick={(onSubmit)}>Click here to choose your Cocktail <Icon name="glass martini" /></button>
+                <button className='btn d-block w-50 cocktail-button' onClick={(onSubmit)}>Click here to choose your Cocktail <Icon name="glass martini" /></button>
             </div>
 
 

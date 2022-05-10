@@ -24,7 +24,7 @@ export const NavBar = () => {
     const [click, setClick] = useState(false);
 
     const handleClick = () => setClick(!click);
-    const closeMobileMenu = () => setClick(false);
+   // const closeMobileMenu = () => setClick(false);
 
     const showLoginOut = () => {
         if (Auth.loggedIn()) {

@@ -3,3 +3,11 @@
     justify-content: center;
     margin: 40px 0;
 }
+
+.cocktail-button {
+    box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1);
+    transition: all 0.2;
+}
+.cocktail-button:hover {
+    transform: scale(1.1);
+}

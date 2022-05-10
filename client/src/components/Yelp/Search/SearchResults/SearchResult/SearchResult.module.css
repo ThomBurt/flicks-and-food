@@ -42,3 +42,27 @@
   background-color: #255185;
   transform: scale(1.1);
 }
+
+@media only screen 
+  and (min-device-width: 375px) 
+  and (max-device-width: 667px) 
+  and (-webkit-min-device-pixel-ratio: 2) { 
+
+    .search-result {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      width: 100%;
+    }
+    .business-info {
+      display: flex;
+      justify-content: center;
+      flex-direction: column;
+      margin-left: 100px;
+    }
+
+    .review-stars {
+      margin-left: 50px;
+      width: 40%;
+    }
+}

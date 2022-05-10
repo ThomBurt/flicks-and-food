@@ -67,6 +67,7 @@ export function SearchResult(props) {
         <img
           src={require(`../../../../Assets/img/yelp-stars/${rating}.png`)}
           alt=" Stars"
+          className={styles['review-stars']}
         />
         <p>{b.review_count} Reviews</p>
         <p>
