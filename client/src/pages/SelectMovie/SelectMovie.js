@@ -21,9 +21,9 @@ const SelectMovie = () => {
   // });
 
   // If not logged in, redirect to login page
-  if (!Auth.loggedIn()) {
-    return <Redirect to="/login" />
-  }
+  // if (!Auth.loggedIn()) {
+   // return <Redirect to="/login" />
+ // }
 
   var random;
   var max = 99
