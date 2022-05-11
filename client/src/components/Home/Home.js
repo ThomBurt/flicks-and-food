@@ -13,10 +13,10 @@ import 'swiper/css/autoplay';
 
 
 const images = [
-    { image: require("/Users/bensharpe/Desktop/flicks-and-food/client/src/components/Assets/img/movie-slide.jpeg") },
-    { image: require("/Users/bensharpe/Desktop/flicks-and-food/client/src/components/Assets/img/food-slide.jpg") },
-    { image: require("/Users/bensharpe/Desktop/flicks-and-food/client/src/components/Assets/img/drink-slide.jpg")},
-    { image: require("/Users/bensharpe/Desktop/flicks-and-food/client/src/components/Assets/img/final-slide.jpg")}
+    { image: require("../Assets/img/drink-slide.jpg") },
+    { image: require("../Assets/img/final-slide.jpg") },
+    { image: require("../Assets/img/food-slide.jpg")},
+    { image: require("../Assets/img/movie-slide.jpeg")}
   ];
 
 export const Home = () => {
