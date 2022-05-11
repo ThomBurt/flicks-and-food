@@ -2,11 +2,12 @@ import React from 'react';
 import { NavBarYelp } from '../NavBarYelp/NavBarYelp';
 import { SearchResultsSummary } from './SearchResultsSummary/SearchResultsSummary';
 import { SearchResults } from './SearchResults/SearchResults';
-import useReactRouter from 'use-react-router';
+// import useReactRouter from 'use-react-router';
+import { useHistory } from "react-router-dom";
 import { useBusinessSearch } from '../../hooks/useBusinessSearch';
 
 export function Search() {
-  const { location, history } = useReactRouter();
+  const { location, history } = useHistory();
   const params = new URLSearchParams(location.search);
   const term = params.get('find_desc');
   const locationParam = params.get('find_loc');
