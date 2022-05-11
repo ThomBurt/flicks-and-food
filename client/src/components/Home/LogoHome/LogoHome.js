@@ -1,7 +1,7 @@
 import React from 'react';
 import icon from '../../Assets/img/app-icon.png';
 import './LogoHome.css';
-import { Icon } from 'semantic-ui-react';
+//import { Icon } from 'semantic-ui-react';
 
 import Auth from '../../../utils/auth';
 
@@ -20,19 +20,19 @@ export function LogoHome() {
                 <div className='text-icon-div'>
                     <div className='centering'>
                         <span className='icon-centering'>
-                            <Icon name="tv" />
+                            {/* <Icon name="tv" /> */}
                         </span>
                         <h5 >Choose the perfect movie</h5>
                     </div>
                     <div className='centering'>
                         <span className='icon-centering'>
-                            <Icon name="food" />
+                            {/* <Icon name="food" /> */}
                         </span>
                         <h5>Match it with some food</h5>
                     </div>
                     <div className='centering'>
                         <span className='icon-centering'>
-                            <Icon name="glass martini" />
+                            {/* <Icon name="glass martini" /> */}
                         </span>
                         <h5>Top if off with a drink</h5>
                     </div>
@@ -40,11 +40,11 @@ export function LogoHome() {
             </div>
             {loggedIn ? (
                 <div className='get-started-button-div'>
-                    <button onClick={event =>  window.location.href='/movie'} className='button-28'>Get Started <Icon name="hand pointer" /></button>
+                    <button onClick={event =>  window.location.href='/movie'} className='button-28'>Get Started </button>
                 </div>
             ) :
             <div className='get-started-button-div'>
-            <button onClick={event =>  window.location.href='/login'} className='button-28'>Login to Get Started<Icon name="hand pointer" /></button>
+            <button onClick={event =>  window.location.href='/login'} className='button-28'>Login to Get Started</button>
             </div> }
 
         </div>

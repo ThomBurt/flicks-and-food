@@ -20,15 +20,12 @@
         "react-icons": "^4.3",
         "react-router-dom": "^5.1.2",
         "react-scripts": "5.0.1",
-        "semantic-ui-css": "^2.4.1",
-        "semantic-ui-react": "^2.1.2",
         "styled-components": "^5.3.5",
         "swiper": "^8.1.4",
-        "use-react-router": "^1.0.7",
         "web-vitals": "^2.1.4"
     },
     "scripts": {
-        "start": "cross-env GENERATE_SOURCEMAP=false react-scripts start",
+        "start": "react-scripts start",
         "build": "react-scripts build",
         "test": "react-scripts test",
         "eject": "react-scripts eject"
