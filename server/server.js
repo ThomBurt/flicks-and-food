@@ -14,7 +14,7 @@ const db = require('./config/connection');
 var cors = require('cors');
 
 
-const PORT = process.env.PORT || 3002;
+const PORT = process.env.PORT || 3001;
 const app = express();
 
 const startServer = async () => {
@@ -79,9 +79,9 @@ app.use(express.static(path.join(__dirname, 'public')));
 // turn on routes
 app.use(routes);
 
-// if (process.env.NODE_ENV === 'production') {
-//   app.use(express.static(path.join(__dirname, '../client/build')));
-// }
+if (process.env.NODE_ENV === 'production') {
+  app.use(express.static(path.join(__dirname, '../client/build')));
+}
 
 // app.get("*", (req, res) => {
 //   res.sendFile(path.join(__dirname, "../client/build/index.html"));
