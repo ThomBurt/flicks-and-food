@@ -13,10 +13,11 @@ import 'swiper/css/autoplay';
 
 
 const images = [
+    { image: require("../Assets/img/movie-slide.jpeg")},
+    { image: require("../Assets/img/food-slide.jpg")},
     { image: require("../Assets/img/drink-slide.jpg") },
     { image: require("../Assets/img/final-slide.jpg") },
-    { image: require("../Assets/img/food-slide.jpg")},
-    { image: require("../Assets/img/movie-slide.jpeg")}
+    
   ];
 
 export const Home = () => {
