@@ -1,3 +1,6 @@
+# Deployed Link:
+https://flicks-and-food.herokuapp.com/
+
 # User Story
 AS A fan of staying in
 I WANT to be given a movie, restaurant and drink options

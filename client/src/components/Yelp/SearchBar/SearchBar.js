@@ -2,6 +2,10 @@ import React, {useState} from 'react';
 import styles from './SearchBar.module.css';
 import './SearchBar.css'
 // import { Icon } from 'semantic-ui-react';
+<<<<<<< HEAD
+=======
+import { FaSearch } from 'react-icons/fa';
+>>>>>>> b3df81d3eaa872dee54a1ba7dcc1abdeadae2eec
 import Form from 'react-bootstrap/Form';
 
 export function SearchBar(props) {
@@ -55,7 +59,11 @@ export function SearchBar(props) {
                     </div>
                 </div>
                 <div className={`button ${styles['search-button']}`} onClick={submit}>
+<<<<<<< HEAD
                     {/* <span className={`icon is-small ${styles['search-icon']}`}> <Icon name='search' /></span> */}
+=======
+                    <span className={`icon is-small ${styles['search-icon']}`}> <FaSearch /></span>
+>>>>>>> b3df81d3eaa872dee54a1ba7dcc1abdeadae2eec
                 </div>
             </div>
         </form>

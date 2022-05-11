@@ -1,8 +1,12 @@
 import './Modal.css';
+<<<<<<< HEAD
 // import { Icon } from 'semantic-ui-react';
+=======
+>>>>>>> b3df81d3eaa872dee54a1ba7dcc1abdeadae2eec
 
 import React from 'react';
 //import { Icon } from 'semantic-ui-react';
+import { FaSearch } from 'react-icons/fa';
 
 export function Modal({ open, children, onClose, props }) {
   if (!open) return null;
@@ -39,7 +43,11 @@ export function Modal({ open, children, onClose, props }) {
           <button className='button-modal' onClick={(e) => {
             e.preventDefault();
             window.open(url)
+<<<<<<< HEAD
           }}>Business Website <span>{/*Icon name="search" />*/}</span></button>
+=======
+          }}>Business Website <span><FaSearch /></span></button>
+>>>>>>> b3df81d3eaa872dee54a1ba7dcc1abdeadae2eec
         </div>
       </div>
     </div>

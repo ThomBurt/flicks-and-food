@@ -1,6 +1,12 @@
 import React, { useState } from 'react';
 import './SelectDrink.css';
 // import { Icon } from 'semantic-ui-react';
+<<<<<<< HEAD
+=======
+import { FaBeer } from 'react-icons/fa';
+import { FiRefreshCw } from "react-icons/fi";
+import { BsArrowRightCircleFill } from "react-icons/bs";
+>>>>>>> b3df81d3eaa872dee54a1ba7dcc1abdeadae2eec
 
 const SelectDrink = () => {
     const [drinkState, setDrinkState] = useState({});
@@ -52,7 +58,11 @@ const SelectDrink = () => {
     return(
         <main>
             <div className='cocktail-button-div' id="main-button">
+<<<<<<< HEAD
                 <button className='btn d-block w-50 cocktail-button' onClick={(onSubmit)}>Click here to choose your Cocktail {/*<Icon name="glass martini" />*/}</button>
+=======
+                <button className='btn d-block w-50 cocktail-button' onClick={(onSubmit)}>Click here to choose your Cocktail <FaBeer /></button>
+>>>>>>> b3df81d3eaa872dee54a1ba7dcc1abdeadae2eec
             </div>
 
 
@@ -61,7 +71,11 @@ const SelectDrink = () => {
                 <div className="movie-card">
                   <div className="movie-card-header">
                   <h3 >{drinkState.name}</h3> 
+<<<<<<< HEAD
                   <button className='refresh-button' onClick={(onRefresh)}>{/*<Icon name='refresh'/>*/}</button>
+=======
+                  <button className='refresh-button' onClick={(onRefresh)}><FiRefreshCw /></button>
+>>>>>>> b3df81d3eaa872dee54a1ba7dcc1abdeadae2eec
                   <div className='refresh-text'>Refresh for a different choice</div>
                   </div>
                 
@@ -72,7 +86,11 @@ const SelectDrink = () => {
                 </div>
                 <div className='link-btn mt-3'>
                 <a href='/history' className='btn d-block w-100 p-3 cocktail-button'>
+<<<<<<< HEAD
                     It's time to check out your evening! {/*<Icon name="long arrow alternate right" />*/}
+=======
+                    It's time to check out your evening! <BsArrowRightCircleFill />
+>>>>>>> b3df81d3eaa872dee54a1ba7dcc1abdeadae2eec
                 </a>
                 </div>
             </div>
