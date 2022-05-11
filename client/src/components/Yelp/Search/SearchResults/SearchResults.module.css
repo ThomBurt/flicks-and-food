@@ -1,0 +1,14 @@
+body {
+    background-color: #a4d8f8;
+    height: 100%;
+}
+
+.search-results > * {
+    margin-top: 1rem;
+}
+
+.search-results {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}

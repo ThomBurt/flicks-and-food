@@ -1,25 +1,56 @@
-import logo from './logo.svg';
+import { ApolloProvider, ApolloClient, InMemoryCache, createHttpLink } from '@apollo/client';
+import { setContext } from '@apollo/client/link/context';
+import { BrowserRouter as Router, Route, Switch } from 'react-router-dom'
+import React from 'react'
 import './App.css';
+import { NavBar } from './components/Navbar/Navbar';
+import { Home } from './components/Home/Home'
+import  GetStarted from './components/GetStarted/GetStarted'
+import { History } from './components/History/History';
+import { Login } from './pages/Login/Login';
+import Signup from './pages/Signup';
+import SelectMovie from './pages/SelectMovie/SelectMovie.js';
+import {Search} from './components/Yelp/Search/Search';
+import SelectDrink from './pages/SelectDrink/SelectDrink';
+
+
+const httpLink = createHttpLink({
+  uri: '/graphql',
+});
+
+const authLink = setContext((_, { headers }) => {
+  const token = localStorage.getItem('id_token');
+  return {
+    headers: {
+      ...headers,
+      authorization: token ? `Bearer ${token}` : '',
+    },
+  };
+});
+
+const client = new ApolloClient({
+  link: authLink.concat(httpLink),
+  cache: new InMemoryCache(),
+});
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <ApolloProvider client={client}>
+      <Router>
+        <NavBar />
+          <Switch>
+            <Route exact path="/" component={Home} />
+            <Route exact path="/home" component={Home} />
+            <Route exact path="/dinner" component={GetStarted} />
+            <Route path='/search' component={Search}/>
+            <Route exact path="/history" component={History} />
+            <Route exact path="/login" component={Login}/>
+            <Route exact path="/signup" component={Signup} />
+            <Route exact path="/movie" component={SelectMovie} />
+            <Route exact path="/drink" component={SelectDrink} />
+          </Switch>
+      </Router>
+    </ApolloProvider>
   );
 }
-
 export default App;
