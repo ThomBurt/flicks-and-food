@@ -1,0 +1,72 @@
+.modal-styles {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: #70aef6;
+    padding: 2rem;
+    border-radius: 1rem;
+    transition: 1s;
+    max-width: 30%;
+    z-index: 1000;
+    color: white;
+    border-radius: 3px;
+  }
+  
+  .close-button {
+    position: absolute;
+    top: 0;
+    right: 0;
+    margin: 3px;
+    opacity: 0.9;
+    font-size: 20px;
+    background-color: white;
+    color: #3872b3;
+    border: none;
+    cursor: pointer;
+    border-radius: 3px;
+  }
+  
+  .business-info-div {
+    display: flex;
+    flex-direction: column;
+    width: auto;
+  }
+  
+  .business-img {
+    max-width: 100%;
+    max-height: 50%;
+    margin-bottom: 20px;
+    border-radius: 3px;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+  }
+  
+  .button-modal {
+    margin-right: 10px;
+    margin-top: 10px;
+    background-color: #3872b3;
+    padding: 10px;
+    color: white;
+    cursor: pointer;
+    border: none;
+    border-radius: 10px;
+    transition: ease-in-out 0.2s;
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 10px 36px 0px, rgba(0, 0, 0, 0.06) 0px 0px 0px 1px;
+  }
+  
+  
+  
+  
+  
+  @media only screen 
+  and (min-device-width: 375px) 
+  and (max-device-width: 667px) 
+  and (-webkit-min-device-pixel-ratio: 2) { 
+
+
+    .modal-styles {
+      padding: 3rem;
+      max-width: 75%;
+    }
+  }
+  
