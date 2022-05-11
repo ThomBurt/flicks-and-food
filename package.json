@@ -22,5 +22,6 @@
   "homepage": "https://github.com/ThomBurt/flicks-and-food#readme",
   "dependencies": {
     "concurrently": "^7.1.0"
-  }
+  },
+  "devDependencies": {}
 }

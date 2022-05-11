@@ -20,10 +20,10 @@ const SelectMovie = () => {
   //   return () => saveMovieIds(savedMovieIds);
   // });
 
-  // If not logged in, redirect to login page
+  //If not logged in, redirect to login page
   if (!Auth.loggedIn()) {
-    return <Redirect to="/login" />
-  }
+   return <Redirect to="/login" />
+ }
 
   var random;
   var max = 99
