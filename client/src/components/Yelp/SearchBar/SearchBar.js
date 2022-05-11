@@ -1,7 +1,7 @@
 import React, {useState} from 'react';
 import styles from './SearchBar.module.css';
 import './SearchBar.css'
-import { Icon } from 'semantic-ui-react';
+// import { Icon } from 'semantic-ui-react';
 import Form from 'react-bootstrap/Form';
 
 export function SearchBar(props) {
@@ -55,7 +55,7 @@ export function SearchBar(props) {
                     </div>
                 </div>
                 <div className={`button ${styles['search-button']}`} onClick={submit}>
-                    <span className={`icon is-small ${styles['search-icon']}`}> <Icon name='search' /></span>
+                    {/* <span className={`icon is-small ${styles['search-icon']}`}> <Icon name='search' /></span> */}
                 </div>
             </div>
         </form>
