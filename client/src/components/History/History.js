@@ -60,9 +60,9 @@ export const History = () => {
                                      <h4>
                                          {localStorage.getItem(`drinkInfo`)}
                                      </h4>
-                                     <div>
+                                     {/* <div>
                                          <img src={img} alt="drink" />
-                                     </div> 
+                                     </div>  */}
                                 </div>
                             </div>
 
