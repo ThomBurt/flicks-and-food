@@ -69,7 +69,7 @@ export const NavBar = () => {
             
                 <NavItem>
                 <NavLinks to="/login" onClick={event => window.location.href='/login'}>
-                    Login/Signup
+                    Log In / Sign Up
                 </NavLinks>
                 </NavItem>
             </NavMenu>
