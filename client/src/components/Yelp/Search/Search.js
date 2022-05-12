@@ -3,11 +3,7 @@ import { NavBarYelp } from '../NavBarYelp/NavBarYelp';
 import { SearchResultsSummary } from './SearchResultsSummary/SearchResultsSummary';
 import { SearchResults } from './SearchResults/SearchResults';
 // import useReactRouter from 'use-react-router';
-<<<<<<< HEAD
-import { useHistory } from "react-router-dom"
-=======
 import { useHistory } from "react-router-dom";
->>>>>>> b3df81d3eaa872dee54a1ba7dcc1abdeadae2eec
 import { useBusinessSearch } from '../../hooks/useBusinessSearch';
 
 export function Search() {

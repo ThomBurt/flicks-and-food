@@ -1,10 +1,7 @@
 import React, { useState } from 'react';
 // import { Icon } from 'semantic-ui-react';
-<<<<<<< HEAD
-=======
 import { FaHandPointUp } from 'react-icons/fa';
 import { MdFastfood } from 'react-icons/md';
->>>>>>> b3df81d3eaa872dee54a1ba7dcc1abdeadae2eec
 
 import { Modal } from './Modal';
 import styles from './SearchResult.module.css';
@@ -88,11 +85,7 @@ export function SearchResult(props) {
         >
           Check out <span>{b.name}</span>
           <span>
-<<<<<<< HEAD
-            {/*<Icon name="hand pointer" />*/}
-=======
             <FaHandPointUp />
->>>>>>> b3df81d3eaa872dee54a1ba7dcc1abdeadae2eec
           </span>
         </button>
         <Modal
@@ -101,11 +94,7 @@ export function SearchResult(props) {
           props={props.business}
           onClose={() => setIsOpen(false)}
         ></Modal>
-<<<<<<< HEAD
-        <button onClick={onSubmit} className={styles['choose-button']}>Choose This Restaurant <span>{/*<Icon name="food" />*/}</span></button>
-=======
         <button onClick={onSubmit} className={styles['choose-button']}>Choose This Restaurant <span> <MdFastfood /></span></button>
->>>>>>> b3df81d3eaa872dee54a1ba7dcc1abdeadae2eec
       </div>
     </div>
   );
