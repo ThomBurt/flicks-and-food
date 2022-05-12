@@ -39,15 +39,43 @@ function App() {
       <Router>
         <NavBar />
           <Switch>
-            <Route exact path="/" component={Home} />
-            <Route exact path="/home" component={Home} />
-            <Route exact path="/dinner" component={GetStarted} />
-            <Route path='/search' component={Search}/>
-            <Route exact path="/history" component={History} />
-            <Route exact path="/login" component={Login}/>
-            <Route exact path="/signup" component={Signup} />
-            <Route exact path="/movie" component={SelectMovie} />
-            <Route exact path="/drink" component={SelectDrink} />
+            <Route exact path="/">
+              <Home />
+            </Route>
+            <Route path="/home">
+              <Home />
+            </Route>
+            <Route path="/dinner">
+              <GetStarted />
+            </Route>
+            <Route path="/search">
+              <Search />
+            </Route>
+            <Route path="/history">
+              <History />
+            </Route>
+            <Route path="/login">
+              <Login />
+            </Route>
+            <Route path="/signup">
+              <Signup />
+            </Route>
+            <Route path="/movie">
+              <SelectMovie />
+            </Route>
+            <Route path="/drink">
+              <SelectDrink />
+            </Route>
+
+            {/* <Route exact path="/" component={Home} /> */}
+            {/* <Route exact path="/home" component={Home} /> */}
+            {/* <Route exact path="/dinner" component={GetStarted} /> */}
+            {/* <Route path='/search' component={Search}/> */}
+            {/* <Route exact path="/history" component={History} /> */}
+            {/* <Route exact path="/login" component={Login}/> */}
+            {/* <Route exact path="/signup" component={Signup} /> */}
+            {/* <Route exact path="/movie" component={SelectMovie} /> */}
+            {/* <Route exact path="/drink" component={SelectDrink} /> */}
           </Switch>
       </Router>
     </ApolloProvider>

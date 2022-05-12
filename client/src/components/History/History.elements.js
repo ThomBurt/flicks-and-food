@@ -21,7 +21,7 @@ box-sizing: border-box;
 border: #2C6CBC 2px solid;
 `;
 
-export const HistoryList = styled.p`
+export const HistoryList = styled.div`
 color: #2C6CBC;
 margin: 20px;
 font-weight: 700;

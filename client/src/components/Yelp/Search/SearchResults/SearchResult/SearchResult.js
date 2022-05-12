@@ -1,5 +1,7 @@
 import React, { useState } from 'react';
 // import { Icon } from 'semantic-ui-react';
+import { FaHandPointUp } from 'react-icons/fa';
+import { MdFastfood } from 'react-icons/md';
 
 import { Modal } from './Modal';
 import styles from './SearchResult.module.css';
@@ -83,7 +85,7 @@ export function SearchResult(props) {
         >
           Check out <span>{b.name}</span>
           <span>
-            {/*<Icon name="hand pointer" />*/}
+            <FaHandPointUp />
           </span>
         </button>
         <Modal
@@ -92,7 +94,7 @@ export function SearchResult(props) {
           props={props.business}
           onClose={() => setIsOpen(false)}
         ></Modal>
-        <button onClick={onSubmit} className={styles['choose-button']}>Choose This Restaurant <span>{/*<Icon name="food" />*/}</span></button>
+        <button onClick={onSubmit} className={styles['choose-button']}>Choose This Restaurant <span> <MdFastfood /></span></button>
       </div>
     </div>
   );
