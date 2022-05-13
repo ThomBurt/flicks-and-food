@@ -4,14 +4,14 @@ import styles from './SearchResults.module.css';
 import {Spinner} from '../../Spinner/Spinner';
 
 export function SearchResults(props) {
-    let searchResults = <Spinner/>;
+    let searchResults = null;
     if(props.businesses && props.businesses.length) {
         searchResults = props.businesses.map(b => <SearchResult key={b.id} business={b}/>);
     }
 
     return (
         <div className={styles['search-results']}>
-            {searchResults}
+            {props.loading?<Spinner/>: searchResults}
         </div>
     );
 }
