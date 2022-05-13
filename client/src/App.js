@@ -66,16 +66,6 @@ function App() {
             <Route path="/drink">
               <SelectDrink />
             </Route>
-
-            {/* <Route exact path="/" component={Home} /> */}
-            {/* <Route exact path="/home" component={Home} /> */}
-            {/* <Route exact path="/dinner" component={GetStarted} /> */}
-            {/* <Route path='/search' component={Search}/> */}
-            {/* <Route exact path="/history" component={History} /> */}
-            {/* <Route exact path="/login" component={Login}/> */}
-            {/* <Route exact path="/signup" component={Signup} /> */}
-            {/* <Route exact path="/movie" component={SelectMovie} /> */}
-            {/* <Route exact path="/drink" component={SelectDrink} /> */}
           </Switch>
       </Router>
     </ApolloProvider>
